@@ -7,7 +7,7 @@ const staggerDelay = 0.2; // Retraso entre la animación de cada div en segundos
 const divVariants = {
   hidden: {
     opacity: 0,
-    x: "25%", // Empieza fuera de la pantalla a la derecha
+    x: "10%", // Empieza fuera de la pantalla a la derecha
   },
   visible: {
     opacity: 1,
@@ -18,7 +18,7 @@ const divVariants = {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between p-24">
-      <div className="text-5xl">
+      <div className="text-8xl">
         <motion.div
           initial="hidden"
           animate="visible"
