@@ -17,8 +17,8 @@ const divVariants = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between p-24">
-      <div className="text-8xl">
+    <main className="flex min-h-screen flex-col justify-between p-12 md:p-16 lg:p-24">
+      <div className="text-4xl md:text-6xl lg:text-8xl">
         <motion.div
           initial="hidden"
           animate="visible"
