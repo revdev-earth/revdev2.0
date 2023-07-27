@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { Carousel } from "@/components/Carousel";
 
 const staggerDelay = 0.2; // Retraso entre la animación de cada div en segundos
 
@@ -65,6 +65,8 @@ export default function Home() {
           priority
         /> */}
       </div>
+
+      <Carousel />
     </main>
   );
 }

@@ -2,12 +2,12 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function AnimationMain({
+export default function AnimationDiv({
   children,
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) {
   return (
     <AnimatePresence>
@@ -21,7 +21,7 @@ export default function AnimationMain({
           visible: {
             opacity: 1,
             transition: {
-              delay: 1,
+              duration: 2,
             },
           },
         }}
