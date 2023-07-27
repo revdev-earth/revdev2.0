@@ -7,7 +7,7 @@ const staggerDelay = 0.2; // Retraso entre la animación de cada div en segundos
 const divVariants = {
   hidden: {
     opacity: 0,
-    x: "10%", // Empieza fuera de la pantalla a la derecha
+    x: "25%", // Empieza fuera de la pantalla a la derecha
   },
   visible: {
     opacity: 1,
