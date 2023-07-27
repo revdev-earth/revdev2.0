@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Carousel } from "@/components/Carousel";
 
-const staggerDelay = 0.2; // Retraso entre la animación de cada div en segundos
+const staggerDelay = 0.3; // Retraso entre la animación de cada div en segundos
 
 const divVariants = {
   hidden: {
@@ -18,40 +18,40 @@ const divVariants = {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between p-12 md:p-16 lg:p-24">
-      <div className="text-4xl md:text-6xl lg:text-8xl">
+      <div className="text-4xl md:text-6xl lg:text-8xl relative">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={divVariants}
           transition={{
-            duration: 0.5, // Duración de la animación de cada div en segundos
+            duration: 1, // Duración de la animación de cada div en segundos
           }}
           style={{ marginBottom: "1rem" }} // Espacio entre cada div
         >
-          Lo que quieres
+          Logra lo que deseas
         </motion.div>
         <motion.div
           initial="hidden"
           animate="visible"
           variants={divVariants}
           transition={{
-            duration: 0.5,
+            duration: 1,
             delay: staggerDelay, // Retraso entre la animación de este div y el anterior
           }}
           style={{ marginBottom: "1rem" }}
         >
-          Esta aqui
+          Eesta a unos pasos
         </motion.div>
         <motion.div
           initial="hidden"
           animate="visible"
           variants={divVariants}
           transition={{
-            duration: 0.5,
+            duration: 1,
             delay: staggerDelay * 2, // Retraso entre la animación de este div y el anterior
           }}
         >
-          Siguenos
+          Hagamos que suceda
         </motion.div>
       </div>
 
