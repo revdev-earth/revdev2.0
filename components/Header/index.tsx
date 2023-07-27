@@ -1,27 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Hamburg from "@/components/Hamburg";
 import { motion } from "framer-motion";
+import Arrow from "../svgs/Arrow";
 
 import "./style.css";
-import Arrow from "../svgs/Arrow";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [reloadAnimation, setReloadAnimation] = useState(true);
+
   const pathname = usePathname();
-
-  useEffect(() => {
-    setReloadAnimation(false);
-
-    setTimeout(() => {
-      setReloadAnimation(true);
-    }, 1000);
-  }, [pathname]);
 
   return (
     <motion.header
@@ -29,9 +20,6 @@ const Header = () => {
         relative bg-[rgba(42,42,42,0)] 
         md:h-20
       "
-      // initial={reloadAnimation ? "hidden" : "visible"}
-      // animate={reloadAnimation ? "visible" : "hidden"}
-
       initial={"hidden"}
       animate={"visible"}
       variants={{

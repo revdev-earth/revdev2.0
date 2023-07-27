@@ -40,7 +40,7 @@ export default function Home() {
           }}
           style={{ marginBottom: "1rem" }}
         >
-          Eesta a unos pasos
+          Esta a unos pasos
         </motion.div>
         <motion.div
           initial="hidden"
