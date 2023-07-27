@@ -65,7 +65,7 @@ const Header = () => {
         </div>
 
         <nav
-          className={` flex flex-row flex-wrap  text-black content-center 
+          className={` flex flex-row flex-wrap  text-black dark:text-white content-center 
             gap-4 gap-y-2 
             md:justify-end md:gap-y-0.5 
             lg:gap-10 

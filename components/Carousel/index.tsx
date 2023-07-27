@@ -4,13 +4,13 @@ import AnimationDiv from "../AnimationDiv";
 
 const images = [
   "vercel.svg",
+  "next.svg",
   "vercel.svg",
+  "next.svg",
   "vercel.svg",
+  "next.svg",
   "vercel.svg",
-  "vercel.svg",
-  "vercel.svg",
-  "vercel.svg",
-  "vercel.svg",
+  "next.svg",
 ];
 
 export function Carousel() {
@@ -20,7 +20,7 @@ export function Carousel() {
         {[...Array(1)].map((_, i) => (
           <motion.div
             key={i}
-            className="flex"
+            className="flex invert gap-10"
             animate={{
               x: ["0%", "-500%"],
             }}
