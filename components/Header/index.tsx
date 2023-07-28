@@ -30,9 +30,7 @@ const Header = () => {
         visible: {
           opacity: 1,
           top: "0px",
-          transition: {
-            duration: 1,
-          },
+          transition: { duration: 1 },
         },
       }}
     >

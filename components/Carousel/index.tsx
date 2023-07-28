@@ -20,7 +20,7 @@ export function Carousel() {
         {[...Array(1)].map((_, i) => (
           <motion.div
             key={i}
-            className="flex invert gap-10"
+            className="flex dark:invert gap-10"
             animate={{
               x: ["0%", "-500%"],
             }}
