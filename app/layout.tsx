@@ -23,7 +23,7 @@ export default function RootLayout({
 
         <main className="min-h-[100vh] overflow-hidden">{children} </main>
 
-        <div className="h-96">RevDev</div>
+        <Footer />
       </body>
     </html>
   );
