@@ -25,7 +25,7 @@ export function Carousel() {
               x: ["0%", "-500%"],
             }}
             transition={{
-              duration: 35,
+              duration: 50,
               ease: "linear",
               repeat: Infinity,
             }}

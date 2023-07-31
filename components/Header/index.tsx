@@ -20,18 +20,14 @@ const Header = () => {
         relative bg-[rgba(42,42,42,0)] 
         md:h-20
       "
-      initial={"hidden"}
-      animate={"visible"}
-      variants={{
-        hidden: {
-          opacity: 0,
-          top: "-80px",
-        },
-        visible: {
-          opacity: 1,
-          top: "0px",
-          transition: { duration: 1 },
-        },
+      initial={{
+        opacity: 0,
+        top: "-80px",
+      }}
+      animate={{
+        opacity: 1,
+        top: "0px",
+        transition: { duration: 1 },
       }}
     >
       <div

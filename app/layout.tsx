@@ -18,12 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <Header />
 
-        <main className="min-h-[100vh]">{children} </main>
+        <main className="min-h-[100vh] overflow-hidden">{children} </main>
 
-        {/* <Footer /> */}
+        <div className="h-96">RevDev</div>
       </body>
     </html>
   );

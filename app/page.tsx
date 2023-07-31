@@ -72,6 +72,8 @@ export default function Home() {
       </div>
 
       <Carousel />
+
+      <div className="h-96" />
     </main>
   );
 }
