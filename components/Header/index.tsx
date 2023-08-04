@@ -67,11 +67,11 @@ const Header = () => {
                   item.name === "conéctate" && "conectate relative"
                 } transition-all`}
               >
-                <Link
-                  href={item.link}
-                  className={`hover:text-purple-500 ${
-                    pathname === item.link && "text-purple-500"
-                  } flex items-center transition-all`}
+                <div
+                // href={item.link}
+                // className={`hover:text-purple-500 ${
+                //   pathname === item.link && "text-purple-500"
+                // } flex items-center transition-all`}
                 >
                   {item.name}
                   {item.name === "conéctate" && (
@@ -81,7 +81,7 @@ const Header = () => {
                       }`}
                     />
                   )}
-                </Link>
+                </div>
 
                 {item.name === "conéctate" && <OtroMenu />}
               </div>

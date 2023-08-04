@@ -16,7 +16,7 @@ const images = [
 export function Carousel() {
   return (
     <AnimationDiv>
-      <div className="overflow-hidden h-80">
+      <div className="overflow-hidden h-40 my-20">
         {[...Array(1)].map((_, i) => (
           <motion.div
             key={i}

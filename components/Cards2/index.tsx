@@ -2,11 +2,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-const cardStyle = {
-  width: "400px",
-  height: "400px",
-};
-
 const transition = { duration: 1, ease: "easeInOut" };
 
 const cardsData = [
@@ -33,10 +28,14 @@ const cardsData = [
   },
 ];
 
-const Card = ({ data, active, onClick }: any) => {
-  const { title, description, imageSrc, alt, leftOffset } = data;
-  const [windowWidth, setWindowWidth] = useState(0);
-  const isActive = active === title;
+export default function Cards2() {
+  const [active, setActive] = useState();
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const clickCard = (title: any) => {
+    setActive((prev) => (prev === title ? undefined : title));
+  };
 
   useEffect(() => {
     // Actualizar el tamaño de la ventana en cada cambio
@@ -53,6 +52,38 @@ const Card = ({ data, active, onClick }: any) => {
   // Calcular el valor de leftOffset en función del porcentaje de la ventana
   const percentageLeftOffset = windowWidth - (600 + 200);
 
+  // Establecer el ancho de la tarjeta en función del tamaño de la ventana
+  let cardSize = 400; // Por defecto, el ancho de la tarjeta es 400px
+
+  if (windowWidth <= 375) {
+    cardSize = 300; // Si la ventana tiene un ancho menor o igual a 375px, el ancho de la tarjeta es 300px
+  } else if (windowWidth <= 425) {
+    cardSize = 350; // Si la ventana tiene un ancho menor o igual a 425px, el ancho de la tarjeta es 350px
+  } else if (windowWidth <= 768) {
+    cardSize = 200; // Si la ventana tiene un ancho menor o igual a 768px, el ancho de la tarjeta es 200px
+  }
+
+  console.log(windowWidth, cardSize);
+
+  return (
+    <div className="relative h-[400px] my-20">
+      {cardsData.map((card, index) => (
+        <Card
+          key={index}
+          data={card}
+          onClick={clickCard}
+          {...{ windowWidth, percentageLeftOffset, active, cardSize }}
+        />
+      ))}
+    </div>
+  );
+}
+
+const Card = ({ data, active, onClick, windowWidth, cardSize }: any) => {
+  const { title, description, imageSrc, alt, leftOffset } = data;
+
+  const isActive = active === title;
+
   return (
     <motion.div
       className={`flex absolute bg-slate-300 rounded-md overflow-hidden cursor-pointer`}
@@ -63,8 +94,8 @@ const Card = ({ data, active, onClick }: any) => {
         zIndex: isActive ? 1 : 0,
       }}
       animate={{
-        opacity: 1,
-        x: isActive ? percentageLeftOffset : leftOffset,
+        opacity: isActive ? 1 : 0.5,
+        x: isActive ? 0 : leftOffset,
         zIndex: isActive ? 1 : 0,
       }}
       whileHover={{ scale: 1.02, zIndex: 1 }}
@@ -87,28 +118,11 @@ const Card = ({ data, active, onClick }: any) => {
       <Image
         src={imageSrc}
         alt={alt}
-        className="w-[400px] h-[400px]"
-        width={100}
-        height={24}
-        style={cardStyle}
+        className={`w-${cardSize} h-${cardSize}`}
+        width={windowWidth}
+        height={windowWidth}
         priority
       />
     </motion.div>
   );
 };
-
-export default function Cards() {
-  const [active, setActive] = useState();
-
-  const clickCard = (title: any) => {
-    setActive((prev) => (prev === title ? undefined : title));
-  };
-
-  return (
-    <div className="relative h-[400px] my-20">
-      {cardsData.map((card, index) => (
-        <Card key={index} data={card} active={active} onClick={clickCard} />
-      ))}
-    </div>
-  );
-}
