@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center justify-center h-24 w-full ">
-            © 2023 - Revdev 2.0 - All rights reserved.
+            © 2023 - Revdev 2.0 - Alle Rechte vorbehalten.
           </div>
         </div>
       </motion.footer>

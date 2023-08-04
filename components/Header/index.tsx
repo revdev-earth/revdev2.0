@@ -54,11 +54,9 @@ const Header = () => {
            ${!isMenuOpen && "hidden md:flex"} mt-4 md:mt-0 transition-all`}
         >
           {[
-            { name: "expertise", link: "/expertise" },
-            { name: "services", link: "/services" },
-            { name: "carta", link: "/carta" },
-            { name: "company", link: "/company" },
-            { name: "carrers", link: "/carrers" },
+            { name: "Dienstleistungen", link: "/dienstleistungen" },
+            { name: "Über uns", link: "/uns" },
+            { name: "Karrieren", link: "/karrieren" },
           ].map((item, i) => {
             return (
               <div
