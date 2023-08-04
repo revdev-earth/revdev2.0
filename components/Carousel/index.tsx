@@ -16,11 +16,11 @@ const images = [
 export function Carousel() {
   return (
     <AnimationDiv>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden h-80">
         {[...Array(1)].map((_, i) => (
           <motion.div
             key={i}
-            className="flex dark:invert gap-10"
+            className="flex dark:invert gap-10 h-full"
             animate={{
               x: ["0%", "-500%"],
             }}
