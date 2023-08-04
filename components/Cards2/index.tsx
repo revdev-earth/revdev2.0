@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -31,9 +33,7 @@ const cardsData = [
 export default function Cards2() {
   const [active, setActive] = useState();
 
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const clickCard = (title: any) => {
     setActive((prev) => (prev === title ? undefined : title));
@@ -64,8 +64,6 @@ export default function Cards2() {
   } else if (windowWidth <= 768) {
     cardSize = 200; // Si la ventana tiene un ancho menor o igual a 768px, el ancho de la tarjeta es 200px
   }
-
-  console.log(windowWidth, cardSize);
 
   return (
     <div className="relative h-[400px] my-20">
