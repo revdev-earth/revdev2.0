@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const transition = { duration: 1, ease: "easeInOut" };
-
 const cardsData = [
   {
     title: "Nosotros",
@@ -33,16 +32,18 @@ const cardsData = [
 export default function Cards2() {
   const [active, setActive] = useState();
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 375
+  );
 
   const clickCard = (title: any) => {
-    setActive((prev) => (prev === title ? undefined : title));
+    setActive((prev: any) => (prev === title ? undefined : title));
   };
 
   useEffect(() => {
     // Actualizar el tamaño de la ventana en cada cambio
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      setWindowWidth(typeof window !== "undefined" ? window.innerWidth : 375);
     };
     handleResize(); // Llamar al inicio para obtener el ancho inicial
     window.addEventListener("resize", handleResize);
@@ -72,7 +73,10 @@ export default function Cards2() {
           key={index}
           data={card}
           onClick={clickCard}
-          {...{ windowWidth, percentageLeftOffset, active, cardSize }}
+          windowWidth={windowWidth}
+          percentageLeftOffset={percentageLeftOffset}
+          active={active}
+          cardSize={cardSize}
         />
       ))}
     </div>

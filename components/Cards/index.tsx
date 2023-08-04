@@ -38,14 +38,16 @@ const cardsData = [
 const Card = ({ data, active, onClick }: any) => {
   const { title, description, imageSrc, alt, leftOffset } = data;
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 375
+  );
 
   const isActive = active === title;
 
   useEffect(() => {
     // Actualizar el tamaño de la ventana en cada cambio
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      setWindowWidth(typeof window !== "undefined" ? window.innerWidth : 375);
     };
     handleResize(); // Llamar al inicio para obtener el ancho inicial
     window.addEventListener("resize", handleResize);
