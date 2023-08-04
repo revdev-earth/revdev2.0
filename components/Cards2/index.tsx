@@ -31,7 +31,9 @@ const cardsData = [
 export default function Cards2() {
   const [active, setActive] = useState();
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
   const clickCard = (title: any) => {
     setActive((prev) => (prev === title ? undefined : title));

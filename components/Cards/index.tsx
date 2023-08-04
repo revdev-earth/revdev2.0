@@ -35,7 +35,11 @@ const cardsData = [
 
 const Card = ({ data, active, onClick }: any) => {
   const { title, description, imageSrc, alt, leftOffset } = data;
-  const [windowWidth, setWindowWidth] = useState(0);
+
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
   const isActive = active === title;
 
   useEffect(() => {
