@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -11,131 +9,82 @@ const cardStyle = {
 
 const transition = { duration: 1, ease: "easeInOut" };
 
-export default function Cards() {
-  const [active, setActive] = useState(false);
-  const [number, setNumber] = useState<number>();
+const cardsData = [
+  {
+    title: "Nosotros",
+    description: "Estos somos nosotros. ¿Quieres saber más?",
+    imageSrc: "/images/rezar.jpeg",
+    alt: "Rezar",
+    leftOffset: "0",
+  },
+  {
+    title: "Ustedes",
+    description: "Estos son ustedes. ¿Quieres ver cómo nos ayudamos?",
+    imageSrc: "/images/agua_2.jpeg",
+    alt: "Agua 2",
+    leftOffset: "10",
+  },
+  {
+    title: "Carreras",
+    description: "¿Quieres ser parte? Mira cómo!",
+    imageSrc: "/images/agua_3.jpeg",
+    alt: "Agua 3",
+    leftOffset: "20",
+  },
+];
 
-  const clickCard = (num: number) => {
-    if (!active) {
-      setActive(true);
-      setNumber(num);
-    } else {
-      if (active && num !== number) {
-        setNumber(num);
-      } else {
-        setActive(false);
-        setNumber(undefined);
-      }
-    }
-    return () => {
-      setNumber(undefined);
-      setActive(false);
-    };
+const Card = ({ data, active, onClick }: any) => {
+  const { title, description, imageSrc, alt, leftOffset } = data;
+  const isActive = active === title;
+
+  return (
+    <motion.div
+      className={`flex absolute bg-slate-300 rounded-md overflow-hidden cursor-pointer left-${leftOffset}`}
+      onClick={() => onClick(isActive ? undefined : title)}
+      initial={{ x: 0, zIndex: isActive ? 1 : 0 }}
+      animate={{ x: isActive ? "100%" : 0 }}
+      whileHover={{ scale: 1.02, zIndex: 1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={transition}
+    >
+      <motion.div
+        className={`flex flex-col ${isActive ? "w-20" : "w-0"}`}
+        initial={{ opacity: 0, width: 0, padding: "0" }}
+        animate={{
+          width: isActive ? "200px" : 0,
+          padding: isActive ? "1rem" : 0,
+          opacity: isActive ? 1 : 0,
+        }}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+      >
+        <h3 className="text-2xl font-bold mb-4">{title}</h3>
+        <p>{description}</p>
+      </motion.div>
+      <Image
+        src={imageSrc}
+        alt={alt}
+        className="w-[400px] h-[400px]"
+        width={100}
+        height={24}
+        style={cardStyle}
+        priority
+      />
+    </motion.div>
+  );
+};
+
+export default function Cards() {
+  const [active, setActive] = useState();
+
+  const clickCard = (title: any) => {
+    setActive((prev) => (prev === title ? undefined : title));
   };
 
   return (
     <div className="relative h-[400px] my-4">
-      {/* Card 1 */}
-      <motion.div
-        className={`flex absolute left-0`}
-        onClick={() => clickCard(1)}
-        initial={{ x: 0 }}
-        animate={{ x: active && number === 1 ? "100%" : 0 }}
-        whileHover={{ scale: 1.05, zIndex: 1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={transition}
-      >
-        <motion.div
-          className={` 
-            flex flex-col overflow-hidden ${
-              active && number === 1 ? "w-20" : "w-0"
-            } `}
-          initial={{ width: 0 }}
-          animate={{ width: active && number === 1 ? "200px" : 0 }}
-          transition={transition}
-        >
-          <h3>Nosotros</h3>
-          <p>Estos somos nosotros</p>
-          <p>¿Quieres saber más?</p>
-        </motion.div>
-        <Image
-          src="/images/rezar.jpeg"
-          alt="Rezar"
-          className="w-[400px] h-[400px]"
-          width={100}
-          height={24}
-          style={cardStyle}
-          priority
-        />
-      </motion.div>
-
-      {/* Card 2 */}
-      <motion.div
-        className={`flex absolute left-10`}
-        onClick={() => clickCard(2)}
-        initial={{ x: 0 }}
-        animate={{ x: active && number === 2 ? "100%" : 0 }}
-        whileHover={{ scale: 1.05, zIndex: 1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={transition}
-      >
-        <motion.div
-          className={` 
-            flex flex-col overflow-hidden ${
-              active && number === 2 ? "w-20" : "w-0"
-            } `}
-          initial={{ width: 0 }}
-          animate={{ width: active && number === 2 ? "200px" : 0 }}
-          transition={transition}
-        >
-          <h3>Ustedes</h3>
-          <p>Estos son ustedes</p>
-          <p>¿Quieres ver cómo nos ayudamos?</p>
-        </motion.div>
-        <Image
-          src="/images/agua_2.jpeg"
-          alt="Agua 2"
-          className="w-[400px] h-[400px]"
-          width={100}
-          height={24}
-          style={cardStyle}
-          priority
-        />
-      </motion.div>
-
-      {/* Card 3 */}
-      <motion.div
-        className={`flex absolute left-20`}
-        onClick={() => clickCard(3)}
-        initial={{ x: 0 }}
-        animate={{ x: active && number === 3 ? "100%" : 0 }}
-        whileHover={{ scale: 1.05, zIndex: 1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={transition}
-      >
-        <motion.div
-          className={` 
-            flex flex-col overflow-hidden ${
-              active && number === 3 ? "w-20" : "w-0"
-            } `}
-          initial={{ width: 0 }}
-          animate={{ width: active && number === 3 ? "200px" : 0 }}
-          transition={transition}
-        >
-          <h3>Carreras</h3>
-          <p>¿Quieres ser parte?</p>
-          <p>Mira cómo!</p>
-        </motion.div>
-        <Image
-          src="/images/agua_3.jpeg"
-          alt="Agua 3"
-          className="w-[400px] h-[400px]"
-          width={100}
-          height={24}
-          style={cardStyle}
-          priority
-        />
-      </motion.div>
+      {cardsData.map((card, index) => (
+        <Card key={index} data={card} active={active} onClick={clickCard} />
+      ))}
     </div>
   );
 }
