@@ -75,17 +75,17 @@ const Card = ({ data, active, onClick }: any) => {
       }}
       whileHover={{ scale: 1.02, zIndex: 1 }}
       whileTap={{ scale: 0.9 }}
-      transition={transition}
+      transition={{ duration: 5, ease: "easeInOut" }}
     >
       <motion.div
         className={`flex flex-col ${isActive ? "w-20" : "w-0"}`}
         initial={{ opacity: 0, width: 0, padding: "0" }}
         animate={{
-          width: isActive ? "200px" : 0,
-          padding: isActive ? "1rem" : 0,
+          width: isActive ? "200px" : "0px",
+          padding: isActive ? "1rem" : "0rem",
           opacity: isActive ? 1 : 0,
         }}
-        transition={{ duration: 0.5, ease: "easeIn" }}
+        transition={{ duration: 1, ease: "backIn" }}
       >
         <h3 className="text-2xl font-bold mb-4">{title}</h3>
         <p>{description}</p>

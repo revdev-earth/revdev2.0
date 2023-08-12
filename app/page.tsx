@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Carousel } from "@/components/Carousel";
-import Cards2 from "@/components/Cards2";
+import Cards from "@/components/Cards";
 
 const staggerDelay = 0.3; // Retraso entre la animación de cada div en segundos
 
@@ -50,7 +50,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <Cards2 />
+      <Cards />
 
       <Carousel />
     </main>

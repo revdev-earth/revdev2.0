@@ -99,10 +99,10 @@ const Card = ({ data, active, onClick, windowWidth, cardSize }: any) => {
         opacity: isActive ? 1 : 0.5,
         x: isActive ? 0 : leftOffset,
         zIndex: isActive ? 1 : 0,
+        transition: { duration: 30 },
       }}
       whileHover={{ scale: 1.02, zIndex: 1 }}
       whileTap={{ scale: 0.9 }}
-      transition={transition}
     >
       <motion.div
         className={`flex flex-col ${isActive ? "w-20" : "w-0"}`}
