@@ -7,7 +7,8 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'gris': '#E4E3E3'
+      'gris': '#E4E3E3',
+      'grisOscuro': '#979696'
     },
     extend: {
       backgroundImage: {
@@ -16,7 +17,10 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       gridTemplateColumns: {
-        'services': 'repeat(auto-fit, 200px)'
+        'services': 'repeat(auto-fit, 200px)',
+        's2': 'repeat(2, 200px)',
+        's3': 'repeat(3, 200px)',
+        's4': 'repeat(4, 200px)'
       }
     },
   },
