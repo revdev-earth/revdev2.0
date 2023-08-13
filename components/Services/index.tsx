@@ -3,9 +3,10 @@ import data from './fragments/data.json'
 
 export default function Services () {
     return (
-        <div className='flex flex-col justify-center items-center'>
-        <h3 className='text-center text-3xl font-bold'>services</h3>
-        <ul className='w-full lg:w-[1000px] grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <ul className='
+            w-full lg:w-[1000px] 
+            grid gap-8 place-content-center
+            grid-cols-1 sm:grid-cols-s2 md:grid-cols-s3 lg:grid-cols-s4'>
             {
                 data.services.map((service) => {
                     return (
@@ -14,6 +15,5 @@ export default function Services () {
                 })
             }
         </ul>
-        </ div>
     )
 }
