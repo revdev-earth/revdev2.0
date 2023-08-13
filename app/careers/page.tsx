@@ -2,18 +2,18 @@ import React from "react";
 
 export default function Careers() {
   return (
-    <div className="bg-gray-100 min-h-screen p-8">
-      <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <div className="text-2xl font-bold mb-2">Careers</div>
-        <div className="text-gray-600 mb-4">
+    <div className="min-h-screen p-8">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+        <div className="text-3xl font-bold mb-2">Careers</div>
+        <div className="text-gray-600 dark:text-gray-400 mb-4">
           Taking part in the action on the reality!
         </div>
         <div className="w-full h-48 bg-gray-300 mb-4 rounded-lg"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto bg-white mt-8 p-8 rounded-lg shadow-lg">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 mt-8 p-8 rounded-lg shadow-lg">
         <div className="text-xl font-bold mb-2">Open vacancies</div>
-        <div className="text-gray-600 mb-4">
+        <div className="text-gray-600 dark:text-gray-400 mb-4">
           Seeking Exciting opportunities, with supportive, collaborative and
           empowering space!
         </div>
@@ -84,7 +84,9 @@ export default function Careers() {
               <div className="w-8 h-8 bg-gray-300 mr-4"></div>
               <div>
                 <div className="font-bold">{title}</div>
-                <div className="text-gray-600">{description}</div>
+                <div className="text-gray-600 dark:text-gray-400">
+                  {description}
+                </div>
               </div>
             </div>
           ))}
@@ -97,7 +99,7 @@ export default function Careers() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto bg-white mt-8 p-8 rounded-lg shadow-lg">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 mt-8 p-8 rounded-lg shadow-lg">
         <div className="text-gray-700 mb-4">
           If you like Rev Dev but don’t see an opportunity for you right now,
           please register your interest.
@@ -105,7 +107,7 @@ export default function Careers() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto bg-white mt-8 p-8 rounded-lg shadow-lg">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 mt-8 p-8 rounded-lg shadow-lg">
         <div className="text-xl font-bold mb-4">Perks & benefits</div>
         <div className="grid gap-6">
           {[
@@ -140,7 +142,9 @@ export default function Careers() {
               <div className="w-8 h-8 bg-gray-300 mr-4"></div>
               <div>
                 <div className="font-bold">{title}</div>
-                <div className="text-gray-600">{description}</div>
+                <div className="text-gray-600 dark:text-gray-400">
+                  {description}
+                </div>
               </div>
             </div>
           ))}
