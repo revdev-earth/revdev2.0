@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Hamburg from "@/components/Hamburg";
 import { motion } from "framer-motion";
+
+import Hamburg from "@/components/Hamburg";
 import Arrow from "../svgs/Arrow";
 
 import "./style.css";
@@ -54,9 +55,9 @@ const Header = () => {
            ${!isMenuOpen && "hidden md:flex"} mt-4 md:mt-0 transition-all`}
         >
           {[
-            { name: "Dienstleistungen", link: "/dienstleistungen" },
-            { name: "Über uns", link: "/uns" },
-            { name: "Karrieren", link: "/karrieren" },
+            { name: "Services", link: "/services" },
+            { name: "Us", link: "/us" },
+            { name: "Careers", link: "/careers" },
           ].map((item, i) => {
             return (
               <div
@@ -65,21 +66,21 @@ const Header = () => {
                   item.name === "conéctate" && "conectate relative"
                 } transition-all`}
               >
-                <div
-                // href={item.link}
-                // className={`hover:text-purple-500 ${
-                //   pathname === item.link && "text-purple-500"
-                // } flex items-center transition-all`}
+                <Link
+                  href={item.link}
+                  className={`hover:text-cyan-500 bg- ${
+                    pathname === item.link && "text-cyan-500"
+                  } flex items-center transition-all`}
                 >
                   {item.name}
                   {item.name === "conéctate" && (
                     <Arrow
                       className={`ml-1 ${
-                        pathname === item.link && "fill-purple-500"
+                        pathname === item.link && "fill-cyan-500"
                       }`}
                     />
                   )}
-                </div>
+                </Link>
 
                 {item.name === "conéctate" && <OtroMenu />}
               </div>
