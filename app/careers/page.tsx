@@ -1,8 +1,9 @@
+import AnimationDiv from "@/components/AnimationDiv";
 import React from "react";
 
 export default function Careers() {
   return (
-    <div className="min-h-screen p-8">
+    <AnimationDiv className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg">
         <div className="text-3xl font-bold mb-2">Careers</div>
         <div className="text-gray-600 dark:text-gray-400 mb-4">
@@ -150,6 +151,6 @@ export default function Careers() {
           ))}
         </div>
       </div>
-    </div>
+    </AnimationDiv>
   );
 }

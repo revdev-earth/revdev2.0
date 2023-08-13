@@ -1,5 +1,7 @@
 // Welcome to RevDev: Igniting Projects and Technological Marvels!
 
+import AnimationDiv from "@/components/AnimationDiv";
+
 const companyInfo = [
   {
     title: "Unveiling Our Essence",
@@ -45,7 +47,7 @@ const companyInfo = [
 
 const Us = () => {
   return (
-    <div className="min-h-screen py-8">
+    <AnimationDiv className="min-h-screen py-8">
       <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg">
         <div className="text-3xl font-extrabold mb-4 ">About Us</div>
         <div className="text-gray-600 dark:text-gray-400 mb-6">
@@ -64,7 +66,7 @@ const Us = () => {
           </div>
         ))}
       </div>
-    </div>
+    </AnimationDiv>
   );
 };
 
