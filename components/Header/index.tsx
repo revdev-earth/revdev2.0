@@ -37,12 +37,12 @@ const Header = () => {
           md:pl-[7%] md:pr-[5%] md:flex-row md:h-20 sm:p-0
           "
       >
-        <div className="flex justify-between md:justify-around w-full items-center md:w-auto">
-          <Link className="h-fit capitalize text-lg" href="/">
+        <div className="relative flex  justify-end md:justify-around w-full items-center md:w-auto">
+          <Link className=" absolute pt-7 lg:relative inset-0 m-auto h-fit capitalize text-3xl text-center" href="/">
             RevDev
           </Link>
 
-          <div className="md:hidden">
+          <div className="pr-5 md:hidden">
             <Hamburg onChange={setIsMenuOpen} />
           </div>
         </div>
