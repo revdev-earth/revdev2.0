@@ -51,11 +51,11 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <Services />
-
       <Cards />
 
       <Carousel />
+
+      <Services />
     </main>
   );
 }
