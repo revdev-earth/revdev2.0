@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <Header />
 
-        <main className="min-h-[100vh] overflow-hidden">{children} </main>
+        <main className="min-h-[100vh] w-full overflow-hidden">{children} </main>
 
         <Footer />
       </body>
