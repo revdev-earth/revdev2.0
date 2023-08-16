@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Carousel } from "@/components/Carousel";
 import Cards from "@/components/Cards";
+import Services from "@/components/Services";
 
 const staggerDelay = 0.3; // Retraso entre la animación de cada div en segundos
 
@@ -23,11 +24,12 @@ const divVariant = (delay: number) => ({
 
 export default function Home() {
   return (
-    <main
+    <div
       className="
-      flex flex-col justify-between p-12 gap-8
-      md:p-16 
-      lg:p-24"
+        flex flex-col justify-between p-12 gap-8
+        md:p-16
+        lg:p-24
+      "
     >
       <div className="text-4xl md:text-6xl lg:text-8xl relative">
         <motion.div
@@ -53,6 +55,8 @@ export default function Home() {
       <Cards />
 
       <Carousel />
-    </main>
+
+      <Services />
+    </div>
   );
 }
