@@ -1,8 +1,9 @@
+import AnimationDiv from "@/components/AnimationDiv";
 import Services from "@/components/Services";
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col items-center gap-10 ">
+    <AnimationDiv className="flex flex-col items-center gap-10 ">
       <Services />
 
       <div className="m-auto px-8 sm:px-12 pt-[49px] pb-[93px] w-full gap-3 text-3xl font-semibold text-left ">
@@ -45,6 +46,6 @@ export default function ServicesPage() {
           </button>
         </form>
       </div>
-    </div>
+    </AnimationDiv>
   );
 }
