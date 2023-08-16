@@ -32,17 +32,20 @@ const Header = () => {
       }}
     >
       <div
-        className="
-          flex flex-col  items-center justify-between w-full uppercase p-5
-          md:pl-[7%] md:pr-[5%] md:flex-row md:h-20 sm:p-0
-          "
+        className={`
+        m-auto
+          flex flex-col  items-center justify-between w-full uppercase p-3 
+          md:pl-[7%] md:pr-[5%] lg:pl-[2.8%] md:flex-row md:h-20 h-auto  bg-[#E4E3E3]
+          xl:w-[1280px]
+          `}
       >
-        <div className="relative flex  justify-end md:justify-around w-full items-center md:w-auto">
-          <Link className=" absolute pt-7 lg:relative inset-0 m-auto h-fit capitalize text-3xl text-center" href="/">
+        <div className="relative
+          flex  justify-end sm:justify-center md:justify-around items-center
+          w-full md:w-auto h-[57px] ">
+          <Link className=" absolute sm:relative  lg:relative inset-0 m-auto h-fit capitalize text-3xl text-center" href="/">
             RevDev
           </Link>
-
-          <div className="pr-5 md:hidden">
+          <div className="absolute right-0 pr-5 md:hidden">
             <Hamburg onChange={setIsMenuOpen} />
           </div>
         </div>
@@ -52,6 +55,7 @@ const Header = () => {
             gap-4 gap-y-2 
             md:justify-end md:gap-y-0.5 
             lg:gap-10 
+            h-[137px] sm:h-[90px]
            ${!isMenuOpen && "hidden md:flex"} mt-4 md:mt-0 transition-all`}
         >
           {[
