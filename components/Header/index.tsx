@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <motion.header
       className="
-        relative bg-[rgba(42,42,42,0)] 
+        relative 
         md:h-20
       "
       initial={{
@@ -35,7 +35,7 @@ const Header = () => {
         className={`
         m-auto
           flex flex-col  items-center justify-between w-full uppercase p-3 
-          md:pl-[7%] md:pr-[5%] lg:pl-[2.8%] md:flex-row md:h-20 h-auto  bg-slate-300
+          md:pl-[7%] md:pr-[5%] lg:pl-[2.8%] md:flex-row md:h-20 h-auto  
           xl:w-[1280px]
           `}
       >
@@ -77,7 +77,7 @@ const Header = () => {
               >
                 <Link
                   href={item.link}
-                  className={`hover:text-cyan-500 bg- ${
+                  className={`hover:text-cyan-500 ${
                     pathname === item.link && "text-cyan-500"
                   } flex items-center transition-all`}
                 >
@@ -91,7 +91,6 @@ const Header = () => {
                   )}
                 </Link>
 
-                {item.name === "conéctate" && <OtroMenu />}
               </div>
             );
           })}
@@ -103,41 +102,3 @@ const Header = () => {
 
 export default Header;
 
-const OtroMenu = () => (
-  <div
-    className="
-      otro-menu absolute z-10 text-black w-60 hidden lg:block 
-    "
-  >
-    <div className="h-2 bg-pink-300 rounded-t-xl " />
-    <div className="flex flex-col gap-4 bg-slate-300 p-3">
-      <Link
-        className="hover:text-pink-300 cursor-pointer"
-        href="/conectate#modelo"
-      >
-        Modelo de desempeño
-      </Link>
-      <Link
-        className="hover:text-pink-300 cursor-pointer"
-        href="/conectate#familia"
-      >
-        Salud en familia
-      </Link>
-      <Link
-        className="hover:text-pink-300 cursor-pointer"
-        href="/conectate#ejecutivos"
-      >
-        Ejecutivo
-      </Link>
-      <Link
-        className="hover:text-pink-300 cursor-pointer"
-        href="/conectate#psicoterapia"
-      >
-        Psicoterapia
-      </Link>
-      <Link className="hover:text-pink-300 cursor-pointer" href="/conectate">
-        Bootcamp
-      </Link>
-    </div>
-  </div>
-);
