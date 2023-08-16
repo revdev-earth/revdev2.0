@@ -15,15 +15,15 @@ export default function ServicesPage () {
         
         <div className='w-full flex flex-col sm:flex-row items-start gap-[13px] sm:justify-between sm:pl-5 sm:items-center '>
           <label htmlFor="formInput1">Cual?</label>
-          <input type="text" className='w-full sm:w-[300px] h-[60px] rounded-lg bg-[#D9D9D9]' />
+          <input type="text" className='w-full sm:w-[300px] h-[60px] rounded-lg bg-slate-300' />
         </div>
         <div className='w-full flex flex-col sm:flex-row items-start gap-[13px] sm:justify-between sm:pl-5 sm:items-center '>
           <label htmlFor="formInput2">Correo</label>
-          <input type="text" className='w-full sm:w-[300px] h-[60px] rounded-lg bg-[#D9D9D9]' />
+          <input type="text" className='w-full sm:w-[300px] h-[60px] rounded-lg bg-slate-300' />
         </div>
         <div className='w-full flex flex-col sm:flex-row items-start gap-[13px] sm:justify-between sm:pl-5 sm:items-center '>
           <label htmlFor="formInput3 ">Algo <br className="md:hidden " /> mas?</label>
-          <textarea name="" id="" cols={30} rows={10} className='w-full sm:w-[300px] h-[120px] rounded-lg bg-[#D9D9D9]'></textarea>
+          <textarea name="" id="" cols={30} rows={10} className='w-full sm:w-[300px] h-[120px] rounded-lg bg-slate-300'></textarea>
         </div>
         <button type="submit" className='hidden'>Enviar</button>
                 

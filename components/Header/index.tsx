@@ -35,7 +35,7 @@ const Header = () => {
         className={`
         m-auto
           flex flex-col  items-center justify-between w-full uppercase p-3 
-          md:pl-[7%] md:pr-[5%] lg:pl-[2.8%] md:flex-row md:h-20 h-auto  bg-[#E4E3E3]
+          md:pl-[7%] md:pr-[5%] lg:pl-[2.8%] md:flex-row md:h-20 h-auto  bg-slate-300
           xl:w-[1280px]
           `}
       >
@@ -105,7 +105,7 @@ const OtroMenu = () => (
     "
   >
     <div className="h-2 bg-pink-300 rounded-t-xl " />
-    <div className="flex flex-col gap-4 bg-[#D4EBF170] p-3">
+    <div className="flex flex-col gap-4 bg-slate-300 p-3">
       <Link
         className="hover:text-pink-300 cursor-pointer"
         href="/conectate#modelo"

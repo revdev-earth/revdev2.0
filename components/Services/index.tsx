@@ -6,7 +6,7 @@ export default function Services () {
         <ul className='
             w-full lg:w-[1000px] m-auto
             grid gap-4 sm:gap-[30px] place-content-center
-            grid-cols-c2 sm:grid-cols-s2 md:grid-cols-s3 lg:grid-cols-s4 sm:pt-12'>
+            grid-cols-[repeat(auto-fit,_160px)] sm:grid-cols-[repeat(3,_180px)] md:grid-cols-[repeat(3,_200px)] lg:grid-cols-[repeat(4,_200px)] sm:pt-12'>
             {
                 data.services.map((service) => {
                     return (
