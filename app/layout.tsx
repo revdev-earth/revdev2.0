@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} w-full`}>
+      <body className={`${inter.className} `}>
         <Header />
 
-        <main className="min-h-[100vh] w-full overflow-hidden">{children} </main>
+        <main className="min-h-[100vh] overflow-hidden">{children} </main>
 
         <Footer />
       </body>

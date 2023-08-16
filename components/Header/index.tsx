@@ -39,10 +39,15 @@ const Header = () => {
           xl:w-[1280px]
           `}
       >
-        <div className="relative
+        <div
+          className="relative
           flex  justify-end sm:justify-center md:justify-around items-center
-          w-full md:w-auto h-[57px] ">
-          <Link className=" absolute sm:relative  lg:relative inset-0 m-auto h-fit capitalize text-3xl text-center" href="/">
+          w-full md:w-auto h-[57px] "
+        >
+          <Link
+            className=" absolute sm:relative  lg:relative inset-0 m-auto h-fit capitalize text-3xl text-center"
+            href="/"
+          >
             RevDev
           </Link>
           <div className="absolute right-0 pr-5 md:hidden">
