@@ -26,8 +26,10 @@ export default function Home() {
   return (
     <div
       className="
-      flex flex-col justify-between  p-12 gap-8
-      md:p-16 lg:p-24"
+        flex flex-col justify-between p-12 gap-8
+        md:p-16
+        lg:p-24
+      "
     >
       <div className="text-4xl md:text-6xl lg:text-8xl relative">
         <motion.div

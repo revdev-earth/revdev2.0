@@ -33,19 +33,20 @@ const Header = () => {
     >
       <div
         className={`
-        m-auto
+          m-auto
           flex flex-col  items-center justify-between w-full uppercase p-3 
           md:pl-[7%] md:pr-[5%] lg:pl-[2.8%] md:flex-row md:h-20 h-auto  
           xl:w-[1280px]
-          `}
+        `}
       >
         <div
-          className="relative
-          flex  justify-end sm:justify-center md:justify-around items-center
-          w-full md:w-auto h-[57px] "
+          className="
+            relative flex  justify-end sm:justify-center md:justify-around items-center
+            w-full md:w-auto h-[57px] 
+          "
         >
           <Link
-            className=" absolute sm:relative  lg:relative inset-0 m-auto h-fit capitalize text-3xl text-center"
+            className="absolute sm:relative inset-0 m-auto h-fit capitalize text-3xl text-center lg:relative"
             href="/"
           >
             RevDev
@@ -56,11 +57,12 @@ const Header = () => {
         </div>
 
         <nav
-          className={` flex flex-row flex-wrap  text-black dark:text-white content-center 
-            gap-4 gap-y-2 
+          className={` 
+            flex flex-row flex-wrap text-black dark:text-white 
+            gap-4 gap-y-2 h-[137px] content-center 
+            sm:h-[90px]
             md:justify-end md:gap-y-0.5 
-            lg:gap-10 
-            h-[137px] sm:h-[90px]
+            lg:gap-10
            ${!isMenuOpen && "hidden md:flex"} mt-4 md:mt-0 transition-all`}
         >
           {[
@@ -90,7 +92,6 @@ const Header = () => {
                     />
                   )}
                 </Link>
-
               </div>
             );
           })}
@@ -101,4 +102,3 @@ const Header = () => {
 };
 
 export default Header;
-
