@@ -15,7 +15,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         'services': 'repeat(auto-fit, 200px)',
-        's2': 'repeat(2, 200px)',
+        'c2': 'repeat(auto-fit, 160px)',
+        's2': 'repeat(3, 180px)',
         's3': 'repeat(3, 200px)',
         's4': 'repeat(4, 200px)'
       }
